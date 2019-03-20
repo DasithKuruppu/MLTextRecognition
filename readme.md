@@ -1,3 +1,5 @@
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a99a4970-9140-40b2-a0c2-7ee097caf787/deploy-status)](https://app.netlify.com/sites/nostalgic-snyder-efbbfc/deploys) 
 ## Intro
 
 The following is a POC(Proof of concept) for text recognition in any Image using [AWS Rekognition](https://aws.amazon.com/rekognition/). Amazon Rekognition is a proven, highly scalable, deep learning technology developed by Amazon’s computer vision scientists to analyze billions of images and videos daily. This repo contains ```serverless API``` which accepts an image and gives the analisis for it in JSON. This also contains a ```client``` based on [Reactjs](http://reactjs.org) which allows to upload an image to the API and view the analisis of the image.

@@ -4,14 +4,15 @@
   "description": "machine learning POC for image / text recognition using rekognize and serverless",
   "main": "handler.js",
   "dependencies": {
-    "aws-sdk": "^2.424.0",
+    "aws-sdk": "^2.424.0"
+  },
+  "devDependencies": {
     "serverless": "^1.39.1",
     "serverless-offline": "^4.9.2"
   },
-  "devDependencies": {},
   "scripts": {
     "offline": "serverless offline",
-    "deploy": "serverless deploy"
+    "deploy": "serverless deploy -v --stage netlify --force"
   },
   "author": "dasith kuruppu",
   "license": "ISC"

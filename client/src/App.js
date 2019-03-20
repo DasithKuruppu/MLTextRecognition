@@ -1,5 +1,4 @@
 import React, { Component, useCallback } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { useDropzone } from "react-dropzone";
 
@@ -12,13 +11,15 @@ const MyDropzone = ({onImageReady, onImageAnalizeComplete, isAnalizing}) => {
       isAnalizing(true);
       (async () => {
         try {
-          let response = await fetch(`http://localhost:3000/image/recognize`, {
+          let request = new Request('https://bhoqgstffl.execute-api.us-east-1.amazonaws.com/netlify/image/recognize',{
             method: "post",
             body: event.target.result.split(",")[1],
-            headers: {
-              "Content-Type": "application/json"
+            mode:'cors',
+            headers:{
+              'Content-Type':'application/json',
             }
           });
+          let response = await fetch(request);
 
           let jsonResponse = await response.json();
           onImageAnalizeComplete(jsonResponse.result);

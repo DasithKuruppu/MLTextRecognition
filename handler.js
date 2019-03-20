@@ -17,12 +17,26 @@ module.exports.recognize = async (event, context) => {
     console.log(result);
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : false
+      },
       body: JSON.stringify({
         message: "Successfully processed the image !",
         result
       })
     };
   } catch (err) {
-    throw err;
+    return {
+      statusCode: 400,
+      headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : false
+      },
+      body: JSON.stringify({
+        message: "Successfully processed the image !",
+        err
+      })
+    };
   }
 };
